@@ -1,0 +1,317 @@
+/* Reset general */
+* {
+    font-family: 'Poppins', sans-serif; /* Establece la fuente 'Poppins' para todos los elementos */
+    margin: 0; /* Elimina el margen predeterminado de todos los elementos */
+    padding: 0; /* Elimina el relleno predeterminado de todos los elementos */
+    box-sizing: border-box; /* Asegura que el ancho y alto de los elementos incluyan el relleno y borde */
+}
+
+/* Estilo para el texto seleccionado */
+*::selection {
+    background: black; /* Cambia el fondo del texto seleccionado a negro */
+    color: grey; /* Cambia el color del texto seleccionado a gris */
+}
+
+/* Estilo para el html */
+html {
+    font-size: 100%; /* Establece el tamaño de la fuente base en el 100% del valor predeterminado */
+    overflow-x: hidden; /* Oculta el desplazamiento horizontal */
+    scroll-behavior: smooth; /* Hace que el desplazamiento sea suave al hacer clic en los enlaces */
+}
+
+/* Estilo para el cuerpo del documento */
+body {
+    background-color: #fcfcfc; /* Establece un fondo gris claro */
+}
+
+/* Espaciados principales */
+#product, #about {
+    padding-top: 8rem; /* Añade un relleno superior de 8rem para las secciones de producto y acerca de */
+}
+
+/* Header */
+header {
+    width: 100%; /* El ancho del encabezado ocupa todo el ancho disponible */
+    height: 10%; /* Establece la altura del encabezado al 10% de la pantalla */
+    background: #fff; /* Establece el fondo del encabezado a blanco */
+    border-bottom: 1px solid; /* Añade un borde inferior */
+    position: fixed; /* Fija el encabezado en la parte superior de la pantalla */
+    display: flex; /* Usamos Flexbox para la disposición de los elementos dentro del encabezado */
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: space-between; /* Espacia los elementos al máximo */
+    padding: 1rem 2rem; /* Añade un relleno de 1rem vertical y 2rem horizontal */
+    z-index: 1000; /* Asegura que el encabezado quede por encima de otros elementos */
+    transition: 0.2s; /* Transición suave para los cambios en el encabezado */
+}
+
+/* Estilo para la barra de navegación dentro del encabezado */
+header .navBar ul {
+    display: flex; /* Usamos Flexbox para distribuir los elementos de la lista */
+    align-items: center; /* Centra los elementos verticalmente */
+    list-style: none; /* Elimina los puntos de la lista */
+}
+
+/* Estilo para los elementos de la barra de navegación */
+header .navBar ul li {
+    margin: 0 1rem; /* Añade un margen de 1rem a la izquierda y derecha de cada elemento */
+}
+
+/* Estilo para los enlaces de la barra de navegación */
+header .navBar ul li a {
+    font-size: 1rem; /* Tamaño de fuente estándar para los enlaces */
+    color: #000; /* Color negro para los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    transition: 0.2s; /* Transición suave al cambiar el estilo del enlace */
+}
+
+/* Estilo para los enlaces activados o al pasar el cursor */
+header .navBar ul li .activate,
+header .navBar ul li a:hover {
+    color: grey; /* Cambia el color a gris cuando se activa o pasa el cursor sobre el enlace */
+}
+
+/* Estilo para el logo en el encabezado */
+header .logo {
+    font-size: 2.5rem; /* Tamaño grande para el logo */
+    color: #000; /* Color negro para el logo */
+    text-decoration: none; /* Elimina el subrayado del logo */
+}
+
+/* Estilo para el ícono de barras (menú móvil) */
+header .fa-bars {
+    font-size: 3rem; /* Tamaño grande para el ícono */
+    color: #000; /* Color negro para el ícono */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre el ícono */
+    display: none; /* Oculta el ícono en pantallas grandes */
+    transition: 0.2s; /* Transición suave para el ícono */
+}
+
+/* Home */
+.home {
+    min-height: 50vh; /* Establece una altura mínima del 50% de la pantalla */
+    background: #fff; /* Fondo blanco para la sección */
+    background-size: cover; /* Asegura que el fondo cubra toda la sección */
+    background-position: center; /* Centra la imagen de fondo */
+    background-attachment: fixed; /* Hace que la imagen de fondo se quede fija al hacer scroll */
+    border-bottom: 1px solid; /* Añade un borde inferior */
+    position: relative; /* Establece la posición relativa para los elementos dentro */
+    overflow: hidden; /* Oculta cualquier contenido que sobresalga */
+    z-index: 0; /* Coloca esta sección detrás de otros elementos */
+}
+
+/* Estilo para el contenido dentro de la sección Home */
+.home .content {
+    display: flex; /* Usa Flexbox para distribuir los elementos dentro */
+    flex-direction: column; /* Los elementos se distribuyen en columna */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    height: 100vh; /* Establece una altura del 100% de la pantalla */
+    padding: 5% 0 17%; /* Añade relleno en la parte superior e inferior */
+    text-align: center; /* Centra el texto */
+}
+
+/* Estilo para el título dentro de la sección Home */
+.home .content h1 {
+    font-size: 5rem; /* Tamaño grande para el título */
+    color: #000; /* Color negro para el título */
+    padding-top: 15%; /* Añade un relleno superior para centrar verticalmente el título */
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3); /* Añade una sombra sutil al título */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+}
+
+/* Estilo para el párrafo dentro de la sección Home */
+.home .content p {
+    font-size: 2rem; /* Tamaño grande para el párrafo */
+    color: #000; /* Color negro para el texto */
+}
+
+/* Estilo para los botones dentro de la sección Home */
+.home .content button {
+    height: 5rem; /* Establece una altura de 5rem para los botones */
+    width: 20rem; /* Establece un ancho de 20rem para los botones */
+    border: none; /* Elimina el borde */
+    background: #000; /* Fondo negro para el botón */
+    color: #fff; /* Color blanco para el texto del botón */
+    font-size: 2rem; /* Tamaño de fuente grande para el botón */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre el botón */
+    transition: 0.2s; /* Transición suave para el cambio de fondo */
+}
+
+/* Efecto de hover sobre el botón */
+.home .content button:hover {
+    background: gray; /* Cambia el fondo a gris cuando se pasa el cursor */
+}
+
+/* Product */
+.product, .footer {
+    text-align: center; /* Centra el texto dentro de estas secciones */
+}
+
+.product {
+    margin-top: 50px; /* Añade un margen superior de 50px */
+}
+
+/* Estilo para los contenedores de productos */
+.product .boxContainer {
+    display: flex; /* Usa Flexbox para distribuir los productos */
+    justify-content: center; /* Centra los productos dentro del contenedor */
+    flex-wrap: wrap; /* Permite que los productos se ajusten en varias filas si es necesario */
+}
+
+/* Estilo para cada caja de producto */
+.product .boxContainer .box {
+    height: 25rem; /* Altura fija de 25rem para cada caja */
+    width: 25rem; /* Ancho fijo de 25rem para cada caja */
+    background: #fff; /* Fondo blanco para cada caja */
+    border-radius: 1rem; /* Bordes redondeados */
+    box-shadow: 0 0.3rem 5rem rgba(0, 0, 0, 0.5); /* Sombra sutil para cada caja */
+    margin: 2rem; /* Añade un margen de 2rem alrededor de cada caja */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre la caja */
+    text-align: center; /* Centra el texto dentro de la caja */
+    transition: 0.2s; /* Transición suave para los cambios en la caja */
+}
+
+/* Estilo para los títulos dentro de las cajas de productos */
+.product .boxContainer .box h3 {
+    font-size: 2rem; /* Tamaño grande para el título dentro de la caja */
+    color: #000; /* Color negro para el título */
+}
+
+/* Efecto al pasar el cursor sobre el título dentro de la caja */
+.product .boxContainer .box:hover h3 {
+    color: gray; /* Cambia el color a gris cuando se pasa el cursor sobre la caja */
+}
+
+/* Estilo para los botones dentro de la sección Product */
+.product button {
+    height: 5rem; /* Establece la altura de 5rem para los botones */
+    width: 20rem; /* Establece el ancho de 20rem para los botones */
+    border: none; /* Elimina el borde */
+    background: #000; /* Fondo negro para el botón */
+    color: #fff; /* Color blanco para el texto del botón */
+    font-size: 2rem; /* Tamaño de fuente grande para el botón */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre el botón */
+    transition: 0.2s; /* Transición suave para el cambio de fondo */
+}
+
+/* Efecto de hover sobre el botón dentro de Product */
+.product button:hover {
+    background: gray; /* Cambia el fondo a gris cuando se pasa el cursor */
+}
+
+/* About */
+.about .row {
+    display: flex; /* Usa Flexbox para la distribución de los elementos */
+    flex-direction: column; /* Los elementos se organizan en columna */
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto dentro */
+    margin: 5rem 0; /* Añade márgenes superior e inferior */
+}
+
+/* Estilo para los títulos dentro de la sección About */
+.about .row .content h3 {
+    font-size: 3rem; /* Tamaño grande para los títulos */
+    color: #000; /* Color negro para los títulos */
+}
+
+/* Estilo para los párrafos dentro de la sección About */
+.about .row .content p {
+    font-size: 1.6rem; /* Tamaño de fuente medio para los párrafos */
+    color: #000; /* Color negro para el texto */
+    padding: 1rem 0; /* Añade un relleno superior e inferior */
+}
+
+/* Estilo para los botones dentro de la sección About */
+.about .row .content button {
+    height: 5rem; /* Altura de 5rem para los botones */
+    width: 20rem; /* Ancho de 20rem para los botones */
+    border: none; /* Elimina el borde */
+    background: #000; /* Fondo negro para el botón */
+    color: #fff; /* Color blanco para el texto del botón */
+    font-size: 2rem; /* Tamaño de fuente grande para el botón */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre el botón */
+    transition: 0.2s; /* Transición suave para el cambio de fondo */
+}
+
+/* Efecto de hover sobre el botón dentro de About */
+.about .row .content button:hover {
+    background: gray; /* Cambia el fondo a gris cuando se pasa el cursor */
+}
+
+/* Footer */
+.footer .icons {
+    padding: 3rem 0; /* Añade relleno en la parte superior e inferior de los íconos */
+    list-style: none; /* Elimina los puntos de la lista */
+}
+
+/* Estilo para los enlaces dentro de los íconos en el footer */
+.footer .icons a {
+    height: 4.5rem; /* Altura de 4.5rem para los íconos */
+    width: 4.5rem; /* Ancho de 4.5rem para los íconos */
+    line-height: 4.2rem; /* Centra el texto dentro de los íconos */
+    border-radius: 50%; /* Hace los íconos redondeados */
+    color: #000; /* Color negro para los íconos */
+    border: 0.2rem solid #fff; /* Borde blanco alrededor de los íconos */
+    font-size: 2rem; /* Tamaño de fuente para los íconos */
+    margin: 0 0.1rem; /* Añade un pequeño margen entre los íconos */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    transition: 0.2s linear; /* Transición suave para el hover */
+}
+
+/* Efecto de hover sobre los íconos del footer */
+.footer .icons a:hover {
+    color: #fff; /* Cambia el color a blanco */
+    background: #000; /* Cambia el fondo a negro */
+    border-color: #000; /* Cambia el color del borde a negro */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    html {
+        font-size: 55%; /* Reduce el tamaño de la fuente base en pantallas pequeñas */
+    }
+
+    header .fa-bars {
+        display: block; /* Muestra el ícono de barras en pantallas pequeñas */
+    }
+
+    header .navBar {
+        position: fixed; /* Fija la barra de navegación */
+        top: -100rem; /* La coloca fuera de la pantalla inicialmente */
+        left: 0;
+        width: 100%; /* Ocupa todo el ancho de la pantalla */
+        background: #000; /* Fondo negro para el menú */
+        border-radius: 1rem; /* Bordes redondeados para el menú */
+        opacity: 0; /* Inicialmente invisible */
+        transition: 0.2s linear; /* Transición suave para mostrar el menú */
+    }
+
+    header .navBar ul {
+        flex-direction: column; /* Cambia la disposición de los enlaces a columna */
+        padding: 2rem 0; /* Añade relleno en la parte superior e inferior */
+    }
+
+    header .navBar ul li {
+        margin: 1rem 0; /* Añade margen superior e inferior a los enlaces */
+        width: 100%; /* Hace que los enlaces ocupen todo el ancho */
+        text-align: center; /* Centra el texto de los enlaces */
+    }
+
+    header .navBar ul li a {
+        font-size: 3rem; /* Aumenta el tamaño de fuente de los enlaces */
+        display: block; /* Hace que los enlaces se muestren como bloques */
+    }
+
+    .home .content p {
+        padding: 1.5rem 2rem; /* Añade más relleno en pantallas pequeñas */
+    }
+
+    .about .row {
+        flex-direction: column-reverse; /* Cambia el orden de los elementos en la columna */
+    }
+
+    .about .row .content {
+        padding: 0 2.5rem; /* Añade relleno a los lados del contenido */
+    }
+}

@@ -1,0 +1,192 @@
+/* General Styles */
+* {
+    margin: 0; /* Elimina el margen predeterminado de todos los elementos */
+    padding: 0; /* Elimina el relleno predeterminado de todos los elementos */
+    box-sizing: border-box; /* Asegura que el ancho y alto de los elementos incluyan el relleno y borde */
+    font-family: 'Poppins', sans-serif; /* Establece la fuente 'Poppins' para todos los elementos */
+}
+
+/* Estilo para los enlaces */
+a {
+    outline: none; /* Elimina el contorno de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: black; /* Color negro para los enlaces */
+}
+
+/* Footer */
+footer {
+    position: static; /* Posicionamiento estático del pie de página */
+    left: 50%; /* Lo posiciona en el centro horizontalmente */
+    bottom: 0; /* Lo coloca en la parte inferior */
+    width: 100%; /* El pie de página ocupa todo el ancho */
+    height: 10px; /* Altura del pie de página */
+    color: rgb(0, 0, 0); /* Color negro para el texto */
+    padding: 5px 0; /* Añade relleno vertical */
+    margin: auto 0; /* Centra el pie de página verticalmente */
+}
+
+/* Estilo para los enlaces dentro de "politicasBx" */
+footer .politicasBx a {
+    color: rgb(0, 0, 0); /* Color negro para los enlaces */
+    border-bottom: 1px solid; /* Añade una línea en la parte inferior de los enlaces */
+}
+
+/* Section Styles */
+section {
+    position: relative; /* Establece la posición relativa para usarla como referencia en los elementos hijos */
+    width: 100%; /* Ancho del 100% */
+    height: 100vh; /* Alto igual a la altura de la pantalla */
+    display: flex; /* Usa Flexbox para organizar los elementos dentro de la sección */
+}
+
+/* Estilo para el contenedor de imagen dentro de la sección */
+section .imgBx {
+    position: relative; /* Posicionamiento relativo para que la imagen ocupe el 50% de la sección */
+    width: 50%; /* Ancho del 50% */
+    height: 100%; /* Alto del 100% */
+}
+
+/* Estilo para la imagen dentro del contenedor */
+section .imgBx img {
+    position: absolute; /* Posiciona la imagen de forma absoluta dentro de su contenedor */
+    top: 0; /* Lo coloca en la parte superior */
+    left: 0; /* Lo coloca en la parte izquierda */
+    width: 100%; /* La imagen ocupa el 100% del ancho */
+    height: 100%; /* La imagen ocupa el 100% de la altura */
+    object-fit: cover; /* La imagen se adapta para cubrir todo el contenedor sin deformarse */
+}
+
+/* Estilo para el contenedor de contenido dentro de la sección */
+section .contentBx {
+    display: flex; /* Usa Flexbox para organizar los elementos dentro del contenedor */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    width: 50%; /* Ancho del 50% */
+    height: 90%; /* Altura del 90% */
+}
+
+/* Estilo para el formulario dentro del contenedor de contenido */
+section .contentBx .formBx {
+    width: 50%; /* Ancho del 50% */
+}
+
+/* Estilo para el título del formulario */
+section .contentBx .formBx h2 {
+    color: rgb(0, 0, 0); /* Color negro para el título */
+    font-weight: 300; /* Peso de fuente ligero */
+    font-size: 15px; /* Tamaño de fuente pequeño */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    margin-bottom: 0; /* Elimina el margen inferior */
+    display: inline-block; /* Muestra el título como un bloque en línea */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+/* Estilo para los campos del formulario */
+section .contentBx .formBx .inputBx {
+    position: relative; /* Establece la posición relativa para los elementos dentro */
+    padding: 20px 0; /* Añade un relleno vertical */
+    width: 100%; /* El campo ocupa el 100% del ancho */
+}
+
+/* Estilo para las etiquetas dentro de los campos del formulario */
+section .contentBx .formBx .inputBx label {
+    position: relative; /* Posición relativa para desplazar la etiqueta */
+    bottom: 10px; /* Desplaza la etiqueta 10px hacia abajo */
+    left: 0; /* Lo coloca a la izquierda */
+    color: grey; /* Color gris para la etiqueta */
+    pointer-events: none; /* Desactiva la interacción con la etiqueta */
+}
+
+/* Estilo para los inputs dentro del formulario */
+section .contentBx .formBx .inputBx input {
+    width: 100%; /* El campo de entrada ocupa el 100% del ancho */
+    outline: none; /* Elimina el contorno predeterminado */
+    border: none; /* Elimina el borde predeterminado */
+    border-bottom: 1px solid rgb(0, 0, 0); /* Añade un borde inferior negro */
+    font-size: 16px; /* Tamaño de fuente estándar */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    color: rgb(0, 0, 0); /* Color negro para el texto */
+    background: transparent; /* Fondo transparente */
+    padding-right: 30px; /* Añade espacio a la derecha para el ícono */
+}
+
+/* Estilo para la etiqueta cuando el input está enfocado */
+.inputBx input:focus ~ label {
+    transform: translateY(-20px); /* Mueve la etiqueta hacia arriba cuando el campo tiene el foco */
+}
+
+/* Estilo para los inputs de tipo texto y contraseña */
+section .contentBx .formBx .inputBx input[type="text"],
+section .contentBx .formBx .inputBx input[type="password"] {
+    margin-left: -5px; /* Ajusta la posición de los campos */
+}
+
+/* Estilo para el botón de envío dentro del formulario */
+section .contentBx .formBx .inputBx input[type="submit"] {
+    height: 40px; /* Altura del botón */
+    width: 100%; /* Ancho del 100% */
+    background: rgb(0, 0, 0); /* Fondo negro */
+    color: rgb(255, 255, 255); /* Color blanco para el texto */
+    outline: none; /* Elimina el contorno predeterminado */
+    border: none; /* Elimina el borde */
+    font-weight: 500; /* Peso de fuente mediano */
+    cursor: pointer; /* Cambia el cursor a mano al pasar sobre el botón */
+}
+
+/* Efecto hover sobre el botón de envío */
+section .contentBx .formBx .inputBx input[type="submit"]:hover {
+    background: rgb(105, 105, 105); /* Cambia el fondo a gris cuando el cursor pasa sobre el botón */
+}
+
+/* Estilo para el contenedor del enlace de registro */
+section .contentBx .formBx .registerBx {
+    height: 40px; /* Altura del enlace de registro */
+    width: 100%; /* Ancho del 100% */
+    background: rgb(255, 255, 255); /* Fondo blanco */
+    color: rgb(0, 0, 0); /* Color negro para el texto */
+    border: thin solid; /* Borde fino */
+    font-weight: 500; /* Peso de fuente mediano */
+    cursor: pointer; /* Cambia el cursor a mano */
+    display: flex; /* Usa Flexbox para centrar el contenido */
+    justify-content: center; /* Centra el texto horizontalmente */
+    align-items: center; /* Centra el texto verticalmente */
+    text-align: center; /* Alinea el texto en el centro */
+}
+
+/* Estilo para la sección de recordar contraseña */
+section .contentBx .remember {
+    margin-bottom: 10px; /* Añade un margen inferior */
+    color: rgb(0, 0, 0); /* Color negro para el texto */
+    font-weight: 400; /* Peso de fuente normal */
+    font-size: 14px; /* Tamaño de fuente pequeño */
+    accent-color: rgb(0, 0, 0); /* Color de acento para los controles de formularios */
+}
+
+/* Estilo para el icono de ver la contraseña */
+section .contentBx .formBx .inputBx .iconEye {
+    position: absolute; /* Posiciona el icono de manera absoluta dentro del campo */
+    right: 10px; /* Colócalo a la derecha */
+    top: 50%; /* Colócalo en el centro verticalmente */
+    transform: translateY(-50%); /* Ajusta la posición para centrarlo */
+    color: rgb(0, 0, 0); /* Color negro para el icono */
+    cursor: pointer; /* Cambia el cursor a mano cuando se pasa sobre el icono */
+    font-size: 18px; /* Tamaño del icono */
+}
+
+/* Home Icon */
+.home-icon {
+    position: fixed; /* Posiciona el icono de inicio de forma fija */
+    top: 20px; /* Colócalo a 20px del borde superior */
+    right: 20px; /* Colócalo a 20px del borde derecho */
+    font-size: 30px; /* Tamaño grande para el icono */
+    color: #000; /* Color negro para el icono */
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Elimina el borde del icono */
+    cursor: pointer; /* Cambia el cursor a mano */
+    z-index: 1000; /* Asegura que el icono esté por encima de otros elementos */
+}
+
+/* Efecto hover sobre el icono de inicio */
+.home-icon:hover {
+    color: gray; /* Cambia el color a gris cuando se pasa el cursor sobre el icono */
+}

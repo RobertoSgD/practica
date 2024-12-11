@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="estilosLyR.css">
+
+
+
+    <title>Document</title>
+
+
+</head>
+
+<body>
+
+    <a href="index.html" class="home-icon"><i class="fas fa-home"></i></a>
+
+    <section>
+        <div class="imgBx">
+            <img src="foto.jpg">
+        </div>
+        <div class="contentBx">
+            <div class="formBx">
+                <h2>REGISTRO</h2>
+                <form id="registrationForm">
+                    <div class="inputBx">
+                        <label for="name">NOMBRE</label>
+                        <input type="text" placeholder="" name="name" id="name" required>
+                    </div>
+
+
+                    <div class="inputBx">
+                        <label for="password">CONTRASEÑA</label>
+                        <span class="iconEye" onclick="mostrarPsw()"><i class="fa-solid fa-eye"></i></span>
+                        <input type="password" placeholder="" name="psw" id="password" required>
+                    </div>
+                    <div class="inputBx">
+                        <label for="pswrep">REPETIR</label>
+                        <span class="iconEye" onclick="mostrarPswRep()"><i class="fa-solid fa-eye"></i></span>
+                        <input type="password" placeholder="" name="psw" id="pswRep" required>
+                    </div>
+                    <div class="inputBx">
+                        <label for="email">EMAIL</label>
+                        <input type="email" placeholder="" name="email" id="email" required>
+                    </div>
+                    <div class="inputBx">
+                        <label for="direccion">DIRECCIÓN</label>
+                        <input type="text" placeholder="" name="direccion" id="direccion" required>
+                    </div>
+                    <div class="inputBx">
+                        <label for="date">FECHA DE NACIMIENTO</label>
+                        <input type="date" placeholder="" name="date" id="date" required>
+                    </div>
+
+                    <div class="inputBx">
+                        <input type="submit" value="ACEPTAR Y CONTINUAR" name="" required>
+                    </div>
+
+                    <div class="registerBx">
+                        <p><a href="login.html">INICIA SESIÓN</a></p>
+                    </div>
+                </form>
+                <footer>
+                    <div class="politicasBx">
+                        <p>Al iniciar sesión o registrarse, acepto vincular mi cuenta conforme a la<a
+                                href="https://www.aepd.es/politica-de-privacidad-y-aviso-legal"> Politica de privacidad
+                                y aviso legal.</a></p>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"; // Aquí se importa la función 'set'
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-analytics.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCFA9sk4VCWKEgdADZp0mZ04UZbFgEnMrU",
+    authDomain: "formulariorobertosgd.firebaseapp.com",
+    databaseURL: "https://formulariorobertosgd-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "formulariorobertosgd",
+    storageBucket: "formulariorobertosgd.firebasestorage.app",
+    messagingSenderId: "1094147633957",
+    appId: "1:1094147633957:web:94127d93ae9f5dfa2320cc",
+    measurementId: "G-3SXYZGK2XP"
+};
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const database = getDatabase(app);
+const auth = getAuth(app);
+
+const form = document.getElementById("registrationForm");
+
+form.addEventListener("submit", function (event) {
+    event.preventDefault();  // Prevenir el envío del formulario
+
+    const name = document.getElementById("name").value;
+    const password = document.getElementById("password").value;
+    const pswRep = document.getElementById("pswRep").value;
+    const email = document.getElementById("email").value;
+    const direccion = document.getElementById("direccion").value;
+    const date = document.getElementById("date").value;
+
+    if (password !== pswRep) {
+        alert("Las contraseñas no coinciden.");
+        return;
+    }
+
+    // Registrar al usuario en Firebase Authentication
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Usuario creado con éxito en Authentication
+            const user = userCredential.user;
+
+            // Guardar los datos del usuario en Realtime Database
+            const userData = {
+                name: name,
+                email: email,
+                direccion: direccion,
+                date: date
+            };
+
+            const newUserRef = ref(database, 'usuarios/' + user.uid);  // Usar UID del usuario autenticado
+            set(newUserRef, userData)
+                .then(() => {
+                    alert("Usuario registrado exitosamente.");
+                    form.reset();  // Limpiar el formulario
+                })
+                .catch((error) => {
+                    console.error("Error al guardar en Realtime Database: ", error);
+                    alert("Ocurrió un error. Intenta nuevamente.");
+                });
+
+        })
+        .catch((error) => {
+            console.error("Error al crear usuario: ", error);
+            alert("Ocurrió un error al registrar al usuario. Intenta nuevamente.");
+        });
+});
+
+</script>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página Home de la PRACTICA.">
+    <meta name="author" content="Roberto Segado Díaz">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="es">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="estilosHome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="estilosCards.css">
+    <link rel="stylesheet" href="mapa.css">
+    <link rel="stylesheet" href="canvas.css">
+
+    <title>PRACTICA</title>
+</head>
+
+<body>
+
+
+    <!-- Aviso de cookies -->
+    <dialog id="cookie-dialog">
+        <p>Este sitio web utiliza cookies para mejorar tu experiencia. Al continuar navegando, aceptas su uso.</p>
+        <button id="accept-cookies">Aceptar</button>
+    </dialog>
+
+
+    <header>
+        <a href="#" class="logo">LOGO</a>
+
+        <nav class="navBar">
+            <ul>
+                <li><a href="#home" class="active">INICIO</a></li>
+                <li><a href="#product-cards-container">PRODUCTOS</a></li>
+                <li><a href="#about">NOSOTROS</a></li>
+                <li><a href="login.html"><i class="fas fa-user"></iclass></i></a></li>
+            </ul>
+        </nav>
+        <div class="fas fa-bars"></div>
+    </header>
+
+    <section class="home" id="home">
+
+
+
+
+        <!-- Botón para generar confeti 
+    <button id="confetiButton">¡Suelta el Confeti!</button>-->
+
+
+
+        <div class="content">
+            <div id="canvas-container">
+                <!-- Aquí se incrustará el canvas de P5.js -->
+            </div>
+            <h1>INICIO</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa iste eveniet, voluptatem repudiandae ex
+                molestiae consequuntur veniam, dignissimos praesentium quod magni sapiente ipsam consequatur officia,
+                fugit unde quia repellendus voluptate.</p>
+            <a href="#"><button>Descubre más</button></a>
+        </div>
+    </section>
+
+    <!-- Contenedor para las tarjetas de productos -->
+    <div id="product-cards-container" class="card-container">
+        <!-- Las tarjetas se añadirán aquí por JavaScript -->
+    </div>
+
+    <!-- Template de la tarjeta de producto -->
+    <template id="product-card-template">
+        <div class="card">
+            <img src="" alt="Producto" class="card-image">
+            <h2 class="card-title">
+                <slot name="title">Nombre del producto</slot>
+            </h2>
+            <p class="card-description">
+                <slot name="description">Descripción del producto</slot>
+            </p>
+            <p class="card-price">
+                <slot name="price">$0.00</slot>
+            </p>
+            <div class="button-group">
+                <button class="like-button">
+                    <i class="fa fa-thumbs-up"></i>
+                </button>
+                <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+        </div>
+    </template>
+
+    <a href="#"><button>Ver más</button></a>
+    </section>
+
+    <section class="about" id="about">
+        <h1 class="heading">NOSOTROS</h1>
+        <div class="row">
+            <div class="image">
+                <img src="PonerImg.png" alt="">
+            </div>
+            <div class="content">
+                <h3>Lorem ipsum no se que</h3>
+                <p>ipsum dolor</p>
+                <a href="#"><button>Leer más</button></a>
+            </div>
+        </div>
+    </section>
+
+    <h3>ESTAMOS AQUÍ</h3>
+    <!-- Contenedor para el mapa -->
+    <div id="map"></div>
+
+    <section class="footer">
+
+        <div class="icons">
+            <a href="#" class="fab fa-facebook-f" aria-label="Facebook"></a>
+            <a href="#" class="fab fa-twitter" aria-label="Twitter"></a>
+            <a href="#" class="fab fa-instagram" aria-label="Instagram"></a>
+        </div>
+
+    </section>
+
+    <!-- Script de Google Maps -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANQbBaoduDKnSseSlGc9EuY7czPLsDrKU&callback=initMap"
+        async defer></script>
+    <script src="mapa.js"></script>
+    <script src="script.js"></script>
+    <script src="sketch.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,5 @@
+ /* Estilo para el contenedor del mapa */
+ #map {
+    height: 75vh; /* Altura del mapa */
+    width: 50%;   /* Ancho del mapa */
+}

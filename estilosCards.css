@@ -1,0 +1,141 @@
+/* Estilo para el cuerpo del documento */
+body {
+    font-family: Arial, sans-serif; /* Establece la fuente principal a Arial o, si no está disponible, una fuente sans-serif */
+    display: flex; /* Usamos Flexbox para el diseño de la página */
+    flex-direction: column; /* Los elementos dentro del body se organizan en una columna */
+    align-items: center; /* Centra los elementos a lo largo del eje transversal (horizontal) */
+    justify-content: flex-start; /* Los elementos se alinean al inicio del contenedor en el eje principal (vertical) */
+    margin: 0; /* Elimina el margen predeterminado del navegador */
+    padding: 0; /* Elimina el relleno predeterminado del navegador */
+    background-color: #f4f4f4; /* Establece el color de fondo a un gris claro */
+}
+
+/* Contenedor para las tarjetas */
+.card-container {
+    display: flex; /* Usamos Flexbox para distribuir las tarjetas */
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten a varias filas si es necesario */
+    gap: 20px; /* Espacio de 20px entre las tarjetas */
+    justify-content: center; /* Centra las tarjetas dentro del contenedor */
+    margin-top: 20px; /* Añade un margen de 20px en la parte superior */
+}
+
+/* Estilo para cada tarjeta */
+.card {
+    background-color: #fff; /* Fondo blanco para cada tarjeta */
+    border-radius: 5px; /* Redondea las esquinas de las tarjetas */
+    overflow: hidden; /* Oculta cualquier contenido que sobresalga fuera de la tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil alrededor de la tarjeta */
+    width: 300px; /* Establece un ancho fijo de 300px para cada tarjeta */
+    padding: 20px; /* Añade un relleno de 20px dentro de la tarjeta */
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+    transition: transform 0.2s ease; /* Transición suave cuando la tarjeta se mueva */
+}
+
+/* Efecto cuando el cursor pasa sobre la tarjeta */
+.card:hover {
+    transform: translateY(-8px); /* Mueve la tarjeta hacia arriba 8px */
+}
+
+/* Estilo para las imágenes dentro de las tarjetas */
+.card img {
+    max-width: 100%; /* Hace que la imagen no exceda el ancho de la tarjeta */
+    border-radius: 5px; /* Redondea las esquinas de la imagen */
+}
+
+/* Estilo para el título de la tarjeta */
+.card-title {
+    font-size: 1.5em; /* Tamaño de fuente grande para el título */
+    margin: 10px 0; /* Margen de 10px arriba y abajo del título */
+}
+
+/* Estilo para la descripción de la tarjeta */
+.card-description {
+    font-size: 1em; /* Tamaño de fuente estándar para la descripción */
+    color: #555; /* Color gris oscuro para el texto */
+    margin-bottom: 10px; /* Margen inferior de 10px */
+}
+
+/* Estilo para el precio de la tarjeta */
+.card-price {
+    font-size: 1.2em; /* Tamaño de fuente ligeramente más grande para el precio */
+    font-weight: bold; /* Pone el precio en negrita */
+    color: #000; /* Color negro para el precio */
+    margin: 10px 0; /* Margen de 10px arriba y abajo del precio */
+}
+
+/* Estilo para los botones (por ejemplo, el botón de agregar al carrito) */
+button, .add-to-cart {
+    padding: 10px 20px; /* Relleno de 10px vertical y 20px horizontal */
+    font-size: 1em; /* Tamaño de fuente estándar */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+    border: 1px solid #ccc; /* Borde gris claro alrededor del botón */
+    background-color: #fff; /* Fondo blanco para los botones */
+    color: #000; /* Texto negro */
+    border-radius: 5px; /* Bordes redondeados para los botones */
+    transition: background-color 0.2s ease; /* Transición suave en el color de fondo */
+    margin: 5px 0; /* Margen de 5px arriba y abajo */
+}
+
+/* Efecto de hover sobre los botones */
+button:hover, .add-to-cart:hover {
+    background-color: #b1b1b1; /* Cambia el fondo a un gris claro cuando se pasa el cursor */
+}
+
+/* Estilo para el cuadro de diálogo de cookies */
+#cookie-dialog {
+    padding: 20px; /* Añade un relleno de 20px dentro del cuadro de diálogo */
+    background-color: #fff; /* Fondo blanco para el cuadro de diálogo */
+    border: 2px solid #ccc; /* Borde gris claro alrededor del cuadro */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
+    text-align: center; /* Centra el texto dentro del cuadro de diálogo */
+    position: fixed; /* Lo hace fijo en la pantalla */
+    top: 50%; /* Centra verticalmente el cuadro en la pantalla */
+    left: 50%; /* Centra horizontalmente el cuadro en la pantalla */
+    transform: translate(-50%, -50%); /* Ajusta el cuadro para que quede perfectamente centrado */
+    z-index: 1000; /* Establece una prioridad alta para que se muestre por encima de otros elementos */
+    width: 80%; /* Ancho del cuadro de diálogo al 80% del contenedor */
+    max-width: 500px; /* Ancho máximo de 500px */
+}
+
+/* Estilo para los botones dentro del cuadro de diálogo de cookies */
+#cookie-dialog button {
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Relleno adecuado */
+    transition: background-color 0.2s ease; /* Transición suave al cambiar el color de fondo */
+}
+
+/* Efecto de hover sobre los botones del cuadro de diálogo */
+#cookie-dialog button:hover {
+    background-color: #bfbfbf; /* Fondo gris claro cuando se pasa el cursor */
+}
+
+/* Estilo para el grupo de botones (por ejemplo, en el cuadro de diálogo) */
+.button-group {
+    display: flex; /* Usa Flexbox para distribuir los botones */
+    gap: 10px; /* Espacio de 10px entre los botones */
+    align-items: center; /* Centra los botones verticalmente */
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 10px; /* Añade un margen superior */
+}
+
+/* Estilo para el botón de "me gusta" */
+.like-button {
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor a una mano */
+    padding: 5px; /* Relleno de 5px */
+    display: flex; /* Usa Flexbox para centrar el icono */
+    align-items: center; /* Centra el icono verticalmente */
+    justify-content: center; /* Centra el icono horizontalmente */
+    transition: transform 0.2s ease; /* Transición suave al cambiar el tamaño */
+}
+
+/* Efecto de hover sobre el botón de "me gusta" */
+.like-button:hover svg,
+.like-button:hover .fa-thumbs-up {
+    transform: scale(1.2); /* Aumenta el tamaño del icono en un 20% */
+    color: #02a6ff; /* Cambia el color del icono a azul claro */
+    fill: #b1b1b1; /* Cambia el color de relleno del icono a gris claro */
+}

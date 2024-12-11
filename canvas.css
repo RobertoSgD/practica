@@ -1,0 +1,19 @@
+#canvas-container {
+    position: fixed;  /* Utilizamos 'fixed' para que el contenedor se quede en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100vw;  /* 100% del ancho de la ventana */
+    height: 100vh;  /* 100% de la altura de la ventana */
+    pointer-events: none;  /* Asegura que el canvas no interfiera con otros elementos */
+    z-index: 9999;  /* Asegura que el canvas se muestre encima de otros elementos */
+}
+
+canvas {
+    position: absolute;  /* El canvas se posiciona dentro del contenedor */
+    top: 0;
+    left: 0;
+    width: 100%;  /* Ajusta el ancho del canvas al 100% del contenedor */
+    height: 100%;  /* Ajusta la altura del canvas al 100% del contenedor */
+    background: transparent !important;  /* Fondo transparente */
+    pointer-events: none;  /* Asegura que el canvas no bloquee eventos en otros elementos */
+}

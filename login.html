@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="estilosLyR.css">
+    <title>Document</title>
+
+
+</head>
+<body>
+    
+    <a href="index.html" class="home-icon"><i class="fas fa-home"></i></a>
+    
+<section>
+    <div class="imgBx">
+        <img src="foto.jpg" >
+    </div>
+    <div class="contentBx">
+        <div class="formBx">
+            <h2>INICIO SESIÓN</h2>
+        <form>
+            <div class="inputBx">
+                <label for="uname">EMAIL</label>
+                <input type="email" placeholder="" name="email" id="email" required>
+            </div>
+
+            <div class="inputBx">
+                <label for="psw">CONTRASEÑA</label>
+                <span class="iconEye" onclick="mostrarPsw()"><i class="fa-solid fa-eye"></i></span>
+                <input type="password" placeholder="" name="uname" id="password" required>
+            </div>
+            <div class="remember">
+                <input type="checkbox" name=""> Mantener la sesión iniciada</input>
+            </div>
+            <div class="inputBx">
+                <input type="submit" value="INICIAR SESIÓN" name="" id="loginBtn" required>
+            </div>
+
+            <div class="registerBx">
+                <p><a href="register.html">REGÍSTRATE</a></p>
+            </div>
+        </form>
+
+        <footer>
+            <div class="politicasBx">
+                <p>Al iniciar sesión o registrarse, acepto vincular mi cuenta conforme a la<a href="https://www.aepd.es/politica-de-privacidad-y-aviso-legal"> Politica de privacidad y aviso legal.</a></p>
+            </div>
+        </footer>
+
+        </div>
+    </div>
+</section> 
+
+
+
+<script src="main.js"></script>
+</body>
+
+<script type="module">
+    // Importar las funciones necesarias desde Firebase v9+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+
+    // Configuración de Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyCFA9sk4VCWKEgdADZp0mZ04UZbFgEnMrU",
+        authDomain: "formulariorobertosgd.firebaseapp.com",
+        databaseURL: "https://formulariorobertosgd-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "formulariorobertosgd",
+        storageBucket: "formulariorobertosgd.firebasestorage.app",
+        messagingSenderId: "1094147633957",
+        appId: "1:1094147633957:web:94127d93ae9f5dfa2320cc",
+        measurementId: "G-3SXYZGK2XP"
+    };
+
+    // Inicializar Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);  // Obtener la instancia de autenticación
+
+    // Función de inicio de sesión
+    const login = async (event) => {
+        event.preventDefault();  // Esto evita que el formulario se envíe y recargue la página
+        const email = document.getElementById("email").value;  // Asegúrate de usar .value para obtener el valor
+        const password = document.getElementById("password").value;  // Lo mismo para la contraseña
+
+        try {
+            // Usar signInWithEmailAndPassword correctamente (con la sintaxis modular)
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            alert(`Bienvenido, ${userCredential.user.email}`);
+
+            // Redirigir a la página index.html
+            window.location.href = "index.html";  // Cambia a tu página de inicio
+        } catch (error) {
+            alert(`Error: ${error.message}`);
+        }
+    };
+
+    // Cambiar el evento a 'submit' en lugar de 'click'
+    document.querySelector("form").addEventListener("submit", login);
+</script>
+
+
+
+</html>
